@@ -127,13 +127,13 @@ public class Lab6 extends GLJPanel implements GLEventListener  {
 		for (int i = 1; i<= 14; i += 1) {
 			gl2.glBegin(GL2.GL_TRIANGLES); 
 			gl2.glVertex3f(x, 0, z);
-			gl2.glMaterialfv (GL2.GL_FRONT, GL2.GL_AMBIENT_AND_DIFFUSE, materials[3], 1);
+			gl2.glMaterialfv (GL2.GL_FRONT, GL2.GL_AMBIENT_AND_DIFFUSE, materials[3], 2);
 			x = (float) Math.sin(i * 2 * Math.PI / 8)*8;
 			z = (float) Math.cos(i * 2 * Math.PI / 8)*8;
 			gl2.glVertex3f(x, 0, z);
 			gl2.glMaterialfv(GL2.GL_FRONT, GL2.GL_SPECULAR, materials[3],1);
 			gl2.glVertex3f(0, 6, 0); 
-			gl2.glMaterialfv(GL2.GL_FRONT, GL2.GL_SHININESS, materials[4],1);
+			gl2.glMaterialfv(GL2.GL_FRONT, GL2.GL_SHININESS, materials[4],2);
 			gl2.glEnd();
 		}
 	}
@@ -149,10 +149,10 @@ public class Lab6 extends GLJPanel implements GLEventListener  {
 		gl2.glEnable(GL2.GL_LIGHTING);  
 		gl2.glEnable(GL2.GL_LIGHT0);
 		// TODO configure better lighting!
-		gl2.glLightfv(GL2.GL_LIGHT1, GL2.GL_AMBIENT_AND_DIFFUSE, new float[] {1,0,0,1},1);
-		gl2.glLightfv(GL2.GL_LIGHT1, GL2.GL_DIFFUSE, new float[] {0.5F,0,0,1},2);
-		gl2.glLightfv(GL2.GL_LIGHT1, GL2.GL_POSITION, new float[] {10,3,0,1},1);
-		gl2.glEnable(GL2.GL_LIGHT1);
+		gl2.glLightfv(GL2.GL_LIGHT0, GL2.GL_AMBIENT_AND_DIFFUSE, materials[10],1);
+		gl2.glLightfv(GL2.GL_LIGHT0, GL2.GL_DIFFUSE, materials[10],1);
+		gl2.glLightfv(GL2.GL_LIGHT0, GL2.GL_POSITION, materials[10],1);
+		
 	}
 
 
